@@ -1,0 +1,26 @@
+<nav>
+  <div class="nav-wrapper container">
+    <a href="#" class="brand-logo">ngContentful</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Page</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+<section>
+
+</section>
+
+<script>
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 300) {
+        $('nav').addClass('red');
+      } else {
+        $('nav').removeClass('red');
+      }
+    })
+  })
+</script>

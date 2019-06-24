@@ -1,7 +1,9 @@
+import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MaterialModule } from './material-module/material.module';
 
 import { AppComponent } from './app.component';
 import { ContentfulService } from './contentful.service';
@@ -10,7 +12,7 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 import { MdToHtmlPipe } from './md-to-html.pipe';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/courses', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'courses', component: CourseListComponent },
   { path: 'course/:id', component: CourseDetailsComponent }
 ];
@@ -20,11 +22,13 @@ const routes: Routes = [
     AppComponent,
     CourseListComponent,
     CourseDetailsComponent,
-    MdToHtmlPipe
+    MdToHtmlPipe,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MaterialModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ContentfulService],
