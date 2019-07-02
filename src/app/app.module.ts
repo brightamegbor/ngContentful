@@ -10,9 +10,11 @@ import { ContentfulService } from './contentful.service';
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { MdToHtmlPipe } from './md-to-html.pipe';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'courses', component: CourseListComponent },
   { path: 'course/:id', component: CourseDetailsComponent }
 ];
@@ -23,7 +25,8 @@ const routes: Routes = [
     CourseListComponent,
     CourseDetailsComponent,
     MdToHtmlPipe,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
